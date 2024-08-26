@@ -11,13 +11,18 @@ import frc.robot.Subsystems.Drive;
 import frc.robot.Subsystems.Shooter;
 
 public class hitandrun extends SequentialCommandGroup {
-    static Drive driveSubsystem = new Drive();
-    static Shooter shooterSybsystem = new Shooter();
-    public hitandrun(Drive driveSubsystem, Shooter shooterSubsystem){
+	
+    	static Drive driveSubsystem = new Drive();
+    	static Shooter shooterSybsystem = new Shooter();
+    
+	public hitandrun(Drive driveSubsystem, Shooter shooterSubsystem){
+
             hitandrun.driveSubsystem = driveSubsystem;
-            hitandrun.shooterSybsystem = shooterSubsystem;
+	    hitandrun.shooterSybsystem = shooterSubsystem;
+	    
             System.out.println("Combo");
 
             addCommands(new armtorpedoes(shooterSubsystem).withTimeout(AutoConstants.PrimerTimer).andThen(new fire(shooterSubsystem, 0.99).withTimeout(AutoConstants.FireTimer).andThen(new arret(shooterSubsystem).withTimeout(1).andThen(new autopilotback(driveSubsystem).withTimeout(AutoConstants.DriverTimer).andThen(new brake(driveSubsystem, shooterSubsystem))))));
-        }
+	    
+	}
 }

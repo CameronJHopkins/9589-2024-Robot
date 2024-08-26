@@ -9,30 +9,40 @@ public class brake extends Command {
 
     private Drive drive;
     private Shooter shooter;
+    
     public brake(Drive drive, Shooter shooter) {
+
        this.drive = drive;
        this.shooter = shooter;
+
     }
 
     @Override
     public void initialize() {
+
         CommandScheduler.getInstance().cancelAll();
+
      }
 
     @Override
     public void execute(){
+
         CommandScheduler.getInstance().cancelAll();
         drive.brake();
         shooter.arret();
         CommandScheduler.getInstance().cancelAll();
+
     }
     
     @Override
     public boolean isFinished() {
+
         return true;
+
     }
 
     @Override
     public void end(boolean interrupted) {
+
     }
 }

@@ -8,25 +8,34 @@ public class autopilotright extends Command {
     private Drive drive;
     
     public autopilotright(Drive drive) {
+
        this.drive = drive;
+       
     }
 
     @Override
     public void initialize() {
-     }
+
+    }
 
     @Override
     public void execute(){
+
         drive.autopilotright();
+	
     }
     
     @Override
     public boolean isFinished() {
+
         return false;
+
     }
 
     @Override
     public void end(boolean interrupted) {
+
         drive.brake();
+
     }
 }

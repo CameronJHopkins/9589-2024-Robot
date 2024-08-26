@@ -6,26 +6,36 @@ import frc.robot.Subsystems.Shooter;
 public class armtorpedoes extends Command {
 
     private Shooter shooter;
+
     public armtorpedoes(Shooter shooter) {
+
         this.shooter = shooter;
         addRequirements(shooter);
     }
-        @Override
+
+    @Override
     public void initialize() {
+
     }
 
     @Override
     public void execute() {
+
         shooter.armtorpedoes();
+
     }
     
     @Override
     public boolean isFinished() {
+
         return false;
+
     }
 
     @Override
     public void end(boolean i) {
+
         shooter.arret();
+
     }
 }

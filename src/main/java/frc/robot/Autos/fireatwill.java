@@ -9,11 +9,15 @@ import frc.robot.Contants.AutoConstants;
 import frc.robot.Subsystems.Shooter;
 
 public class fireatwill extends SequentialCommandGroup {
+	
     private final Shooter shooterSubsystem;
+    
     public fireatwill(robotcontainer robot, Shooter shooterSubsystem2){
+	    
             this.shooterSubsystem = shooterSubsystem2;
             System.out.println("Fire");
 
             addCommands(new armtorpedoes(shooterSubsystem).withTimeout(AutoConstants.PrimerTimer).andThen(new fire(shooterSubsystem2, 0.99).withTimeout(AutoConstants.FireTimer).andThen(new arret(shooterSubsystem2))));
+
     }
 }
