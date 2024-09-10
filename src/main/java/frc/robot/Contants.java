@@ -2,6 +2,8 @@ package frc.robot;
 
 public final class Contants {
 
+  public static final String ROBOT_NAME = "Skooble";
+
   public static class ControllerConstants {
 
     public static final int Controller = 0;
