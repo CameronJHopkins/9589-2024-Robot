@@ -20,10 +20,6 @@ public class Robot extends TimedRobot {
   private static robotcontainer RobotContainer;
   private SequentialCommandGroup autonomouscommand;
 
-
-  /*The following is a method to run a python script.  If it is needed, uncomment it and put 'runPythonScript();' into the applicable time part.  Then, add the path to the script
-   * to the new ProcessBuilder();.  You will need new imports and dependencies.*/
-
   public void runPythonScript() {
 
     try {
